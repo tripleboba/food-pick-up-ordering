@@ -18,11 +18,13 @@ menu, orders, SMS text, order length, user, owner
 
 ## Routes (bread / restful)
 
-B GET   /menu
-R GET   /menu/:id (individual item)
-E POST  /menu/:id/edit
+B GET   /menu                         <!-- === homepage -->
+R GET   /menu/:id (individual item)   <!-- place order for this item -->
+  GET   /cart                         <!-- cart button - here to review order with total $, time, address...-->
+  POST  /cart/submit                  <!-- place order button - confirm msg - send sms-->
+
 A POST  /menu
-D POST  /menu/:id/delete
+
 
 ## MVD - minimum viable demo
 
