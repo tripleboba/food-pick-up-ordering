@@ -1,7 +1,12 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   min-height: 100vh;
 
   background: rgb(163, 208, 219);
@@ -14,4 +19,53 @@ body {
     rgba(163, 208, 219, 1) 74%,
     rgba(163, 208, 219, 1) 100%
   );
+}
+
+.top-banner {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+}
+
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 7;
+  height: 8em;
+  background-color: coral;
+  margin: 10px 10px 10px 10px;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  background-color: aqua;
+  margin: 10px 10px 10px 10px;
+}
+
+.title {
+  padding: 0 20px 0 20px;
+}
+
+.each-dish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  height: 20em;
+  width: 25%;
+  margin: 6em 4em 4em 4em;
+
+}
+
+.image {
+  background-color: beige;
+  margin: 1em;
+  width: 16em;
+  height: 14em;
 }
