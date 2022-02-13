@@ -1,7 +1,24 @@
 
 const express = require('express');
-const app = express();
+const router  = express.Router();
 
-app.get("/cart", (req, res) => {
-  res.render("cart");
-});
+
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    res.render('../views/cart')
+    // let query = `SELECT * FROM widgets`;
+    // console.log(query);
+    // db.query(query)
+    //   .then(data => {
+    //     const widgets = data.rows;
+    //     res.json({ widgets });
+    //   })
+    //   .catch(err => {
+    //     res
+    //       .status(500)
+    //       .json({ error: err.message });
+    //   });
+  });
+  return router;
+};
+

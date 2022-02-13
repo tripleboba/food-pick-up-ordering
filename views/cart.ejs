@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Cart</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
@@ -13,12 +13,14 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/eachDish.css" type="text/css" />
-
+  <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  
 </head>
 
 <body>
@@ -32,25 +34,21 @@
         <div>address</div>
     </section>
   </section>
-  <!-- Menu -->
-  <section class="all-dishes">
-    <!-- <div class="cart">
-      <button type="submit" value="submit">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </button>
-    </div> -->
-
-    <!-- <section class="each-dish">
-      <header class="each-dish-header">
-        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext">
-      </header>
-      <footer class="each-dish-footer">
-        <p class="dish-title">Title</p>
-        <p class="dish-description">description</p>
-        <button class="order-button" type="submit">order</button>
-      </footer>
-    </section> -->
+  <section class="whole-order">
+    <div class ="order-header">
+      <h3 class="order-title">Your Order</h3>
+    </div>
+  <article class="placed-order">
+    <div class="order-body">
+      <p>dish title</p>
+      <p>dish cost</p>
+      <p>total cost</p>
+    </div>
+  </article>
+  <button class="place-order" type="submit" value="submit">Place Order</button>
   </section>
+  
+  
 </body>
 
 </html>
