@@ -5,67 +5,54 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  min-height: 100vh;
-
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+  background-color: #555361;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 .top-banner {
   display: flex;
   width: 100%;
-  background-color: white;
+  color: #555361;
+  background-color: #555361;;
   justify-content: space-between;
 }
 
+// .cart {
+//   // display: flex;
+// }
 
 .title-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 7;
+  flex-grow: 5;
   height: 8em;
-  background-color: coral;
+  background-color: #f3fc73;
   margin: 10px 10px 10px 10px;
+  border-radius: 20px;
 }
 
 .contact {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  background-color: aqua;
+  background-color: #f3fc73;
   margin: 10px 10px 10px 10px;
+  font-family: 'Supermercado One';
+  font-size: 22px;
+  border-radius: 20px;
 }
 
 .title {
   padding: 0 20px 0 20px;
+  font-family: 'Supermercado One';
+  font-size: 5em;
 }
 
-.each-dish {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: aliceblue;
-  height: 20em;
-  width: 25%;
-  margin: 6em 4em 4em 4em;
-
+.footer-actions .fas:hover {
+  color: gold;
 }
 
-.image {
-  background-color: beige;
-  margin: 1em;
-  width: 16em;
-  height: 14em;
-}
+

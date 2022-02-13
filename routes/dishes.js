@@ -11,16 +11,16 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render('../views/dishes')
-    // db.query(`SELECT * FROM dishes;`)
-    //   .then(data => {
-    //     const dishes = data.rows;
-    //     res.json({ dishes });
-    //   })
-    //   .catch(err => {
-    //     res
-    //       .status(500)
-    //       .json({ error: err.message });
-    //   });
-  });
+  //   db.query(`SELECT * FROM dishes;`)
+  //     .then(data => {
+  //       const dishes = data.rows;
+  //       res.json({ dishes });
+  //     })
+  //     .catch(err => {
+  //       res
+  //         .status(500)
+  //         .json({ error: err.message });
+  //     });
+   });
   return router;
 };

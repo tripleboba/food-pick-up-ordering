@@ -1,13 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <title>Home Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/eachDish.css" type="text/css" />
+
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -16,21 +22,91 @@
 <body>
   <section class="top-banner">
     <div class="title-container">
-      <h2 class="title">Big Mouth</h2>
+      <h2 class="title">Big Mouth Boba</h2>
     </div>
-    <div class="contact">
-      <ul>
-        <li>phone</li>
-        <li>email</li>
-        <li>address</li>
-      </ul>
-    </div>
+    <section class="contact">
+        <div>phone</div>
+        <div>email</div>
+        <div>address</div>
+    </section>
   </section>
-  <section class="each-dish">
-    <div class="image">img</div>
-    <div class="order-button"><button type="button">order</button> </div>
-    <div class="description">description</div>
+  <!-- Menu -->
+  
+  <section class="all-dishes">
+    <!-- <div class="cart">
+      <button type="submit" value="submit">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </div> -->
+
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext">
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext"></div>
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext"></div>
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext"></div>
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext"></div>
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+    <section class="each-dish">
+      <header class="each-dish-header">
+        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext"></div>
+      </header>
+      <footer class="each-dish-footer">
+        <p class="dish-title">Title</p>
+        <p class="dish-description">description</p>
+        <button class="order-button" type="submit">order</button>
+      </footer>
+    </section>
+
   </section>
+
+      <span class="footer-actions">
+        <i class="fas fa-flag"></i>
+        <i class="fas fa-retweet"></i>
+        <i class="fas fa-heart"></i>
+      </span>
 </body>
 
 </html>
