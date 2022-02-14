@@ -9,10 +9,10 @@ $(document).ready( function() {
     window.location.href='/api/cart';
   });
 
-  $(".place-order").click(e => {
+  // $(".place-order").click(e => {
 
-    window.location.href='/api/orders';
-  });
+  //   window.location.href='/api/orders';
+  // });
 
 
 
@@ -37,7 +37,7 @@ $(document).ready( function() {
   //////test
   $(".place-order").click(e => {
     e.preventDefault();
-    console.log('im in the ajax');
+    console.log('im in the click handler');
     console.log($(e.target).attr('value'));
     $.ajax({
       url: "/api/orders",

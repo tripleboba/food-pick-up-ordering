@@ -26,11 +26,11 @@ module.exports = (db) => {
 
 
  router.post("/", (req, res) => {
-  // console.log('iddddd!!!', req.body.id);
+  console.log('iddddd!!!', req.body.id);
   db.query(`INSERT INTO cart_items (user_id, dish_id)
   VALUES (1, ${parseInt(req.body.id)})`)
   .then(data => {
-    console.log(data);
+    console.log('data', data);
     const dishes = data.rows;
     
     res.render('orders', { dishes });

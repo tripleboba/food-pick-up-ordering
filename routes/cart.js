@@ -23,7 +23,6 @@ const router  = express.Router();
 //   return router;
 // };
 
-
 module.exports = (db) => {
   router.get("/", (req, res) => {
 
