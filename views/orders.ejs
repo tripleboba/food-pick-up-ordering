@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/eachDish.css" type="text/css" />
   <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/orders.css" type="text/css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -38,8 +39,37 @@
     <div class="order-header">
       <h3 class="order-title">Order Placed</h3>
     </div>
-    <article class="placed-order">
-      
+    <article class="confirmed-order">
+      <section class="order-text">
+        <% let total=0;%>
+          <% let name='' ;%>
+            <% let duration=0;%>
+              <% for (let item of order) { %>
+                <div class="placed-items">
+                  <p>
+                    <%name=item.name;%>
+                  </p>
+                  <% total +=item.cost; %>
+                    <% duration +=item.duration; %>
+                      <p>
+                        <%=`${item.title}, ${item.duration} minutes`%>,
+                      </p>
+                </div>
+
+                <%}%>
+                <p>-------------------------</p>
+                <footer class="placed-footer">
+                  <p>
+                    <%=`Customer: ${name}`%>
+                  </p>
+                  <p>
+                    <%=`total: $${total}`%>
+                  </p>
+                  <p>
+                    <%=`ready in: ${duration} minutes`%>
+                  </p>
+                </footer>
+      </section>
     </article>
   </section>
 </body>

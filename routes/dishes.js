@@ -24,6 +24,7 @@ module.exports = (db) => {
     });
  });
 
+
  router.post("/", (req, res) => {
   // console.log('iddddd!!!', req.body.id);
   db.query(`INSERT INTO cart_items (user_id, dish_id)

@@ -4,6 +4,19 @@
 // const dishes = require("../../routes/dishes");
 
 $(document).ready( function() {
+  // handle click on cart-icon to go to the orders page
+  $(".cart-icon").click(e => {
+    window.location.href='/api/cart';
+  });
+
+  $(".place-order").click(e => {
+
+    window.location.href='/api/orders';
+  });
+
+
+
+  // handle order button click
   $(".order-button").click(e => {
     e.preventDefault();
     
@@ -19,28 +32,29 @@ $(document).ready( function() {
       // }
     });
   });
-});
 
 
-
-
-
-// ------- place order button ----- updates owner order page//
-$(document).ready( function() {
+  //////test
   $(".place-order").click(e => {
     e.preventDefault();
-    console.log('clicked me');
+    console.log('im in the ajax');
+    console.log($(e.target).attr('value'));
     $.ajax({
       url: "/api/orders",
-      method: "POST"
-      // data: {
-      //   id: $(e.target).attr('value')
-      // },
+      method: "POST",
+      data: {
+        id: $(e.target).attr('value')
+      },
       // sucess: () => {
       //   // console.log($(this).val());
       //   console.log('button clicked!');
       // }
     });
-    
   });
+
 });
+
+
+
+
+

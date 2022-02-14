@@ -1,0 +1,20 @@
+
+
+
+.confirmed-order {
+  width: 400px;
+  height: auto;
+  background-color: #f3fc73;
+  border-radius: 20px;
+  margin-bottom: 4em;
+}
+
+.order-text {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
