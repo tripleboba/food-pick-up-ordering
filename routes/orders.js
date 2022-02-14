@@ -25,7 +25,7 @@ const router  = express.Router();
 
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
+  router.get("/orders", (req, res) => {
     
     let query = `SELECT dishes.title, dishes.cost, users.name
     FROM cart_items 
@@ -37,7 +37,7 @@ module.exports = (db) => {
     .then(data => {
       const dishes = data.rows;
       // res.json({ dishes });
-      res.render('../views/cart', { dishes })
+      res.render('../views/orders', { dishes })
       })
       .catch(err => {
         res
@@ -47,4 +47,7 @@ module.exports = (db) => {
   });
   return router;
 };
+
+
+
 

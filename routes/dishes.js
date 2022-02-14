@@ -8,24 +8,14 @@
 const express = require('express');
 const router  = express.Router();
 
-
-const { router } = require('pg');
-
-const router = new router({
-  user: 'labber',
-  password: 'labber',
-  host: 'localhost',
-  database: 'midterm'
-});
-
 module.exports = (db) => {
-  router.get("/api/dishes", (req, res) => {
+  router.get("/", (req, res) => {
+    // console.log(req);
     db.query(`SELECT * FROM dishes;`)
     .then(data => {
       const dishes = data.rows;
-      console.log('here', dishes);
-      res.json({ dishes });
-      res.render('../views/dishes')
+      // console.log('here', dishes);
+      res.render('dishes', { dishes });
     })
     .catch(err => {
       res
@@ -33,6 +23,26 @@ module.exports = (db) => {
         .json({ error: err.message });
     });
  });
+
+ router.post("/", (req, res) => {
+  // console.log('iddddd!!!', req.body.id);
+  db.query(`INSERT INTO cart_items (user_id, dish_id)
+  VALUES (1, ${parseInt(req.body.id)})`)
+  .then(data => {
+    console.log(data);
+    const dishes = data.rows;
+    
+    res.render('orders', { dishes });
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+});
  return router;
 };
+
+
+
 

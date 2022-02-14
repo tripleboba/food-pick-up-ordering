@@ -27,29 +27,33 @@
       <h2 class="title">Big Mouth Boba</h2>
     </div>
     <section class="contact">
-        <div>phone</div>
-        <div>email</div>
-        <div>address</div>
+        <div>1234567890</div>
+        <div>bigmouth@gmail.com</div>
+        <div>12 State Street Newburyport</div>
     </section>
+  </section>
+  <section class="cart">
+
+      <button type="submit" value="submit" class="cart-button">
+        <i class="fa-thin fa-cart-shopping"></i>
+      </button>
+
   </section>
   <!-- Menu -->
   <section class="all-dishes">
-    <!-- <div class="cart">
-      <button type="submit" value="submit">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </button>
-    </div> -->
-
-    <!-- <section class="each-dish">
+    <% for (let t of dishes) { %> 
+    <section class="each-dish">
       <header class="each-dish-header">
-        <img class="dish-pic"><img src="https://images.squarespace-cdn.com/content/v1/5cf33f51d7062300015f85db/1565275812796-RLU45A272NXGC3DBNH5J/25_2000px.jpg?format=2500w" alt="alternatetext">
+        <img class="dish-pic"><img src=<%=t.image %> alt="alternatetext">
       </header>
       <footer class="each-dish-footer">
-        <p class="dish-title">Title</p>
-        <p class="dish-description">description</p>
-        <button class="order-button" type="submit">order</button>
+        <p class="dish-title"><%=t.title %></p>
+        <p class="dish-description"><%=t.description%></p>
+        <p class="dish-price"><%=`$${t.cost}`%></p>
+        <button class="order-button" type="button" value="<%=t.id%>">order</button>
       </footer>
-    </section> -->
+    </section>
+    <% } %>
   </section>
 </body>
 

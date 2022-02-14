@@ -20,6 +20,28 @@ body {
 // .cart {
 //   // display: flex;
 // }
+.cart-button-container {
+  display: flex;
+  justify-self: center;
+  
+}
+
+.cart-button {
+  display: flex;
+  background-color: #f3fc73;
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  margin: 2em;
+  justify-self: center;
+}
+i.fa-solid-fa-cart-shopping {
+
+  width: 75px;
+  height: 75px;
+  color: #555361;
+  //justify-self: flex-end;
+}
 
 .title-container {
   display: flex;
@@ -41,7 +63,7 @@ body {
   background-color: #f3fc73;
   margin: 10px 10px 10px 10px;
   font-family: 'Supermercado One';
-  font-size: 22px;
+  font-size: 16px;
   border-radius: 20px;
 }
 
