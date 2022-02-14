@@ -4,9 +4,12 @@
 // const dishes = require("../../routes/dishes");
 
 $(document).ready( function() {
+  $(".cart-icon").click(()=>{
+    window.location.href='/api/cart';
+  })
   $(".order-button").click(e => {
     e.preventDefault();
-    
+
     $.ajax({
       url: "/api/dishes",
       method: "POST",
@@ -41,6 +44,6 @@ $(document).ready( function() {
       //   console.log('button clicked!');
       // }
     });
-    
+
   });
 });

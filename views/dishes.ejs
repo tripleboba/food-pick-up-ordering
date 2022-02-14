@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/eachDish.css" type="text/css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -32,16 +32,12 @@
         <div>12 State Street Newburyport</div>
     </section>
   </section>
-  <section class="cart">
-
-      <button type="submit" value="submit" class="cart-button">
-        <i class="fa-thin fa-cart-shopping"></i>
-      </button>
-
-  </section>
+  <div class="cart-icon">
+    <i class="fas fa-shopping-cart"></i>
+  </div>
   <!-- Menu -->
   <section class="all-dishes">
-    <% for (let t of dishes) { %> 
+    <% for (let t of dishes) { %>
     <section class="each-dish">
       <header class="each-dish-header">
         <img class="dish-pic"><img src=<%=t.image %> alt="alternatetext">

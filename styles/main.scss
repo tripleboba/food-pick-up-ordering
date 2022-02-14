@@ -17,30 +17,14 @@ body {
   justify-content: space-between;
 }
 
-// .cart {
-//   // display: flex;
-// }
-.cart-button-container {
-  display: flex;
-  justify-self: center;
-  
+.cart-icon {
+  float: right;
+  font-size: 500%;
+  // margin: .25em 2em 0em 0em;
 }
-
-.cart-button {
-  display: flex;
-  background-color: #f3fc73;
-  width: 75px;
-  height: 75px;
-  border-radius: 75px;
-  margin: 2em;
-  justify-self: center;
-}
-i.fa-solid-fa-cart-shopping {
-
-  width: 75px;
-  height: 75px;
-  color: #555361;
-  //justify-self: flex-end;
+.cart-icon:hover {
+  cursor: pointer;
+  color: yellow;
 }
 
 .title-container {
