@@ -19,6 +19,8 @@ $(document).ready( function() {
   // handle order button click
   $(".order-button").click(e => {
     e.preventDefault();
+    const id = $(e.target).attr('value');
+    console.log('id: ', id);
     
     $.ajax({
       url: "/api/dishes",
@@ -31,6 +33,8 @@ $(document).ready( function() {
       //   console.log('button clicked!');
       // }
     });
+
+
   });
 
 
