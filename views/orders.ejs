@@ -45,10 +45,10 @@
           <% let name='' ;%>
             <% let duration=0;%>
               <% for (let item of dishes) { %>
-                
+
                 <div class="placed-items">
                   <p>
-                    <%name=item;%>
+                    <%name=item.name;%>
                   </p>
                   <% total +=item.cost; %>
                     <% duration +=item.duration; %>

@@ -9,10 +9,10 @@ $(document).ready( function() {
     window.location.href='/api/cart';
   });
 
-  // $(".place-order").click(e => {
+  $(".place-order").click(e => {
 
-  //   window.location.href='/api/orders';
-  // });
+    window.location.href='/api/orders';
+  });
 
 
 
@@ -21,7 +21,19 @@ $(document).ready( function() {
     e.preventDefault();
     const id = $(e.target).attr('value');
     console.log('id: ', id);
-    
+    // $(".added-to-cart").addClass(id)  //.show();
+    // $(`#${id}`).show()
+    // $(".order-button").addClass(id);
+    // $(`.${id}`).add('.added-to-cart').show()
+   // $(".order-button").addClass(id);
+  //  console.log('this', $(this).val());
+  //   console.log('val', ($(".order-button").val()));
+  //   if ($(".order-button").val() === id) {
+  //     $(".added-to-cart").show();
+  //   };
+
+
+
     $.ajax({
       url: "/api/dishes",
       method: "POST",
