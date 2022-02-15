@@ -4,6 +4,12 @@
 // const dishes = require("../../routes/dishes");
 
 $(document).ready( function() {
+
+  $(".cart-icon").click(()=>{
+    window.location.href='/api/cart';
+  })
+
+
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(e => {
     window.location.href='/api/cart';
@@ -17,6 +23,7 @@ $(document).ready( function() {
 
 
   // handle order button click
+
   $(".order-button").click(e => {
     e.preventDefault();
     const id = $(e.target).attr('value');
@@ -75,12 +82,7 @@ $(document).ready( function() {
       error: (x, y, z) => {
         console.log(x, y, z)
       }
+
     });
   });
-
 });
-
-
-
-
-

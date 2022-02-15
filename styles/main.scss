@@ -17,14 +17,6 @@ body {
   justify-content: space-between;
 }
 
-// .cart {
-//   // display: flex;
-// }
-// .cart-button-container {
-//   display: flex;
-//   justify-self: center; 
-// }
-
 .cart-icon {
   display: flex;
   justify-content: flex-end;
@@ -37,6 +29,10 @@ body {
   cursor: pointer;
 }
 
+.cart-icon:hover {
+  cursor: pointer;
+  color: yellow;
+}
 
 .title-container {
   display: flex;
