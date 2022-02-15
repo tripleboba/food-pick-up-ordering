@@ -4,22 +4,23 @@
 // const dishes = require("../../routes/dishes");
 
 $(document).ready( function() {
+
+  $(".cart-icon").click(()=>{
+    window.location.href='/api/cart';
+  })
+
+
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(e => {
     window.location.href='/api/cart';
   });
 
-  // $(".place-order").click(e => {
-
-  //   window.location.href='/api/orders';
-  // });
-
-
 
   // handle order button click
+
   $(".order-button").click(e => {
     e.preventDefault();
-    
+
     $.ajax({
       url: "/api/dishes",
       method: "POST",
@@ -33,8 +34,6 @@ $(document).ready( function() {
     });
   });
 
-
-  //////test
   $(".place-order").click(e => {
     e.preventDefault();
     console.log('im in the click handler');
@@ -50,11 +49,3 @@ $(document).ready( function() {
       //   console.log('button clicked!');
       // }
     });
-  });
-
-});
-
-
-
-
-

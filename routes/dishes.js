@@ -32,7 +32,7 @@ module.exports = (db) => {
   .then(data => {
     console.log('data', data);
     const dishes = data.rows;
-    
+
     res.render('orders', { dishes });
   })
   .catch(err => {
