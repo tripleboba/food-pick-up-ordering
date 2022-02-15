@@ -24,14 +24,13 @@ module.exports = (db) => {
     });
  });
 
-
  router.post("/", (req, res) => {
   console.log('[from routes/dishes.js] req.body.id:', req.body.id);
   db.query(`INSERT INTO dishes_cart (dish_id) VALUES (${parseInt(req.body.id)})`)
   .then(data => {
-    console.log('[from routes/dishes.js] data:', data);
-    const dishes = data.rows;
-    res.render('orders', { dishes });
+    console.log('[from routes/dishes.js]data', data);
+    const dishesInCart = data.rows;
+    res.render('cart', { dishesInCart });
   })
   .catch(err => {
     res
@@ -41,7 +40,4 @@ module.exports = (db) => {
 });
  return router;
 };
-
-
-
 

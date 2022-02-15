@@ -22,7 +22,7 @@ module.exports = (db) => {
       .catch(err => {
         res
           .status(500)
-          .json({ 'error from cart.js': err.message });
+          .json({ error: err.message });
       });
   });
   return router;
