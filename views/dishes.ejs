@@ -13,7 +13,13 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/eachDish.css" type="text/css" />
+<<<<<<< master
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+=======
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+>>>>>>> master
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -40,13 +46,13 @@
     <% for (let t of dishes) { %>
     <section class="each-dish">
       <header class="each-dish-header">
-        <img class="dish-pic"><img src=<%=t.image %> alt="alternatetext">
+        <img class="dish-pic"><img src=<%=dish.image %> alt="alternatetext">
       </header>
       <footer class="each-dish-footer">
-        <p class="dish-title"><%=t.title %></p>
-        <p class="dish-description"><%=t.description%></p>
-        <p class="dish-price"><%=`$${t.cost}`%></p>
-        <button class="order-button" type="button" value="<%=t.id%>">order</button>
+        <p class="dish-title"><%=dish.title %></p>
+        <p class="dish-description"><%=dish.description%></p>
+        <p class="dish-price"><%=`$${dish.cost}`%></p>
+        <button class="order-button" type="button" value="<%=dish.id%>">order</button>
       </footer>
     </section>
     <% } %>

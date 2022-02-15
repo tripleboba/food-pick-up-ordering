@@ -27,6 +27,7 @@ body {
   color: yellow;
 }
 
+
 .title-container {
   display: flex;
   align-items: center;
@@ -41,7 +42,7 @@ body {
 .contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-grow: 1;
   background-color: #f3fc73;

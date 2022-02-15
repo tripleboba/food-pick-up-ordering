@@ -7,6 +7,12 @@ $(document).ready( function() {
   $(".cart-icon").click(()=>{
     window.location.href='/api/cart';
   })
+
+  // handle click on cart-icon to go to the orders page
+  $(".cart-icon").click(e => {
+    window.location.href='/api/cart';
+  });
+
   $(".order-button").click(e => {
     e.preventDefault();
 
