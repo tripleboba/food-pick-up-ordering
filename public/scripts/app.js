@@ -9,7 +9,7 @@ $(document).ready( function() {
     window.location.href='/api/cart';
   });
 
-  $(".place-order").click(e => {
+  $(".place-order").on('click', e => {
 
     window.location.href='/api/orders';
   });
@@ -51,20 +51,30 @@ $(document).ready( function() {
 
 
   //////test
-  $(".place-order").click(e => {
+  $(".place-order").click( function(e) {
     e.preventDefault();
     console.log('im in the click handler');
-    console.log($(e.target).attr('value'));
+    //console.log('value', $(e.target).attr('value'));
+
+
+    //  console.log('event!', e);
+    //  console.log($(this))
+    //const data = e;
     $.ajax({
       url: "/api/orders",
       method: "POST",
-      data: {
-        id: $(e.target).attr('value')
+      // data: {
+      //   data
+      //   //id: $(this)
+      //   // id: $(e.target).attr('value')
+      // },
+      success: () => {
+        // console.log($(this).val());
+        console.log('button clicked!');
       },
-      // sucess: () => {
-      //   // console.log($(this).val());
-      //   console.log('button clicked!');
-      // }
+      error: (x, y, z) => {
+        console.log(x, y, z)
+      }
     });
   });
 

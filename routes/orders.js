@@ -1,8 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
+
     let query = `SELECT dishes.title, dishes.cost, dishes.duration,
      users.name, users.phone
      FROM cart_items
@@ -35,10 +37,43 @@ module.exports = (db) => {
 
 router.post("/", (req, res) => {
 
-  console.log(req.body);
+  //console.log('REQUEST', req);
 
-  let query = `UPDATE cart_items
-  SET placed = TRUE`;
+  let select = `SELECT user_id, dish_id
+  FROM cart_items
+  WHERE user_id = 1`;
+
+  db.query(select).then(data => {
+    const cartItems = data.rows;
+    console.log("select on orders", cartItems);
+    //res.render('../views/orders', { cartItems })
+    for (item of cartItems) {
+    let insert = `INSERT INTO orders (user_id, dish_id)
+    VALUES (${item.user_id}, ${item.dish_id})`
+      db.query(insert)
+      .then(data => {
+        console.log('inserted order record', data);
+      })
+    }
+    let clearCart = `DELETE FROM cart_items
+    WHERE user_id = 1`;
+    db.query(clearCart)
+    .then(data => {
+      console.log('items deleted', data)
+    })
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+        console.log(err);
+    });
+  });
+
+  //console.log('select', select);
+  //let query = `INSERT INTO orders VALUES (${select})`
+  // let query = `UPDATE cart_items
+  // SET placed = TRUE`;
 
   //`SELECT NOW()`
   // INSERT INTO orders (dish_id, customer_id, restaurant_id)
@@ -51,21 +86,22 @@ router.post("/", (req, res) => {
     // WHERE cart_items.placed = TRUE;
 
 
-  db.query(query)
-  .then(data => {
-    console.log('post query');
-    const dishes = data.rows;
-     // res.json({ dishes });
-    console.log('this one', dishes);
-    res.send('place an order!')
-    })
-    .catch(err => {
-      console.log(err)
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-  });
+  // db.query(query)
+  // .then(data => {
+  //   console.log('post query');
+  //   //const dishes = data.rows;
+  //    // res.json({ dishes });
+  //   //console.log('this one', dishes);
+  //   res.send('place an order!')
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //     res
+  //       .status(500)
+  //       .json({ error: err.message });
+  //       console.log(error);
+  //   });
+  //});
   return router;
 };
 

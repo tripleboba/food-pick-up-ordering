@@ -6,5 +6,6 @@ CREATE TABLE orders (
   dish_id INTEGER REFERENCES dishes(id) ON DELETE CASCADE,
   -- start_time TIMESTAMP,
   -- end_time TIMESTAMP,
-  restaurant_id INTEGER REFERENCES restaurant(id) ON DELETE CASCADE
+  -- restaurant_id INTEGER REFERENCES restaurant(id) ON DELETE CASCADE,
+  status VARCHAR(225) DEFAULT 'added'
 );
