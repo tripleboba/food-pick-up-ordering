@@ -11,16 +11,6 @@ module.exports = (db) => {
      FROM cart_items
      JOIN dishes ON dish_id = dishes.id
      JOIN users ON user_id = users.id`;
-     //JOIN restaurant ON dishes.restaurant_id = restaurant.id;
-    // `SELECT
-    //   dishes.title, dishes.cost, dishes.duration,
-    //   users.name, users.phone,
-    //   restaurant.name, restaurant.phone
-    // FROM orders
-    // JOIN dishes ON dish_id = dishes.id
-    // JOIN users ON user_id = users.id
-    // JOIN restaurant ON dishes.restaurant_id = restaurant.id;
-    // `;
 
     db.query(query)
     .then(data => {
@@ -45,10 +35,10 @@ router.post("/", (req, res) => {
   WHERE user_id = 1`;
 
   db.query(select).then(data => {
-    const cartItems = data.rows;
+    const dishes = data.rows;
     //console.log("select on orders", cartItems);
-    //res.render('../views/orders', { cartItems })
-    for (item of cartItems) {
+    // res.redirect('/api/orders')
+    for (let item of dishes) {
     let insert = `INSERT INTO orders (user_id, dish_id)
     VALUES (${item.user_id}, ${item.dish_id})`
       db.query(insert)
@@ -69,6 +59,7 @@ router.post("/", (req, res) => {
         .json({ error: err.message });
         console.log(err);
     });
+   
   });
 
   //console.log('select', select);
