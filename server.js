@@ -7,6 +7,10 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const MessagingResponse = require("twilio").twiml.MessagingResponse;
+const accountSid = 'ACc8e62cae9da40b73f8e52d769cae54a7'; //process.env.TWILIO_ACCOUNT_SID;
+const authToken = '1459f178ffc2d5ce831bb61ba16885b4'; //process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -21,6 +25,7 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+
 
 app.use(
   "/styles",
@@ -38,6 +43,7 @@ app.use(express.static("public"));
 const dishesRoutes = require("./routes/dishes");
 const cartRoutes = require("./routes/cart");
 const orderRoute = require("./routes/orders");
+const twilioMsg = require("./routes/twilio");
 
 
 // Mount all resource routes
@@ -45,6 +51,7 @@ const orderRoute = require("./routes/orders");
 app.use("/api/dishes", dishesRoutes(db));
 app.use("/api/cart", cartRoutes(db));
 app.use("/api/orders", orderRoute(db));
+app.use("/api/sendMesssage", twilioMsg(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

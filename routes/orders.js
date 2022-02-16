@@ -46,22 +46,22 @@ router.post("/", (req, res) => {
 
   db.query(select).then(data => {
     const cartItems = data.rows;
-    console.log("select on orders", cartItems);
+    //console.log("select on orders", cartItems);
     //res.render('../views/orders', { cartItems })
     for (item of cartItems) {
     let insert = `INSERT INTO orders (user_id, dish_id)
     VALUES (${item.user_id}, ${item.dish_id})`
       db.query(insert)
-      .then(data => {
-        console.log('inserted order record', data);
-      })
+    //   .then(data => {
+    //     //console.log('inserted order record', data);
+    //   })
     }
-    let clearCart = `DELETE FROM cart_items
-    WHERE user_id = 1`;
-    db.query(clearCart)
-    .then(data => {
-      console.log('items deleted', data)
-    })
+    // let clearCart = `DELETE FROM cart_items
+    // WHERE user_id = 1`;
+    // db.query(clearCart)
+    // .then(data => {
+    //  // console.log('items deleted', data)
+    // })
     })
     .catch(err => {
       res

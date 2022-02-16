@@ -12,13 +12,25 @@ $(document).ready( function() {
 
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(e => {
-    window.location.href='/api/cart';
+    // window.location.href='/api/cart';
+    $.ajax({
+      url: "/api/orders",
+      method: "POST",
+      // data: {
+      //   id: $(e.target).attr('value')
+      // },
+      // sucess: () => {
+      //   // console.log($(this).val());
+      //   console.log('button clicked!');
+      // }
+    });
+
   });
 
-  $(".place-order").on('click', e => {
+  // $(".place-order").on('click', e => {
 
-    window.location.href='/api/orders';
-  });
+  //   window.location.href='/api/orders';
+  // });
 
 
 
@@ -68,7 +80,7 @@ $(document).ready( function() {
     //  console.log($(this))
     //const data = e;
     $.ajax({
-      url: "/api/orders",
+      url: "/api/sendMesssage",
       method: "POST",
       // data: {
       //   data
@@ -78,6 +90,7 @@ $(document).ready( function() {
       success: () => {
         // console.log($(this).val());
         console.log('button clicked!');
+        // window.location.href='/api/orders'
       },
       error: (x, y, z) => {
         console.log(x, y, z)
