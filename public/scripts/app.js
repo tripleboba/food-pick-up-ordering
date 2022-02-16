@@ -13,7 +13,6 @@ $(document).ready( function() {
 
   });
 
-
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(()=>{
     window.location.href='/api/cart';
