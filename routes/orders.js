@@ -30,10 +30,10 @@ router.post("/", (req, res) => {
   WHERE user_id = 1`;
 
   db.query(select).then(data => {
-    const cartItems = data.rows;
+    const dishes = data.rows;
     //console.log("select on orders", cartItems);
-    //res.render('../views/orders', { cartItems })
-    for (item of cartItems) {
+    // res.redirect('/api/orders')
+    for (let item of dishes) {
     let insert = `INSERT INTO orders (user_id, dish_id)
     VALUES (${item.user_id}, ${item.dish_id})`
       db.query(insert)
@@ -54,6 +54,7 @@ router.post("/", (req, res) => {
         .json({ error: err.message });
         console.log(err);
     });
+   
   });
 
   //console.log('select', select);

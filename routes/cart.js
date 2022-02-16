@@ -5,7 +5,6 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
 
-
     let query = `SELECT dishes.title, dishes.cost, users.name
     FROM cart_items
     JOIN dishes ON dishes.id = cart_items.dish_id
