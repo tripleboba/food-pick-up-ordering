@@ -9,7 +9,6 @@ $(document).ready( function() {
     window.location.href='/api/cart';
   })
 
-
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(e => {
     // window.location.href='/api/cart';
@@ -31,6 +30,7 @@ $(document).ready( function() {
 
   //   window.location.href='/api/orders';
   // });
+  
 
 
 
