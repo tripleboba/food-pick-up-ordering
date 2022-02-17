@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
 
 .each-dish {
@@ -12,8 +13,7 @@
   color: #555361;
   height: auto;
   width: 25%;
-  margin: 1em 3em 3em 3em;
-  font-family: 'Supermercado One';
+  margin: 1em;
   border-radius: 20px;
   // box-shadow: 5px 10px #888888;
 }
@@ -42,26 +42,27 @@ footer {
   font-size: 1.5em;
   margin: 0em;
 }
+.dish-price {
+  font-size: 1.3em;
+  margin-top: 1em 0em 0em 0em;
+}
+
 .order-button {
   font-size: 1.5em;
   padding: 0.25em 0.5em;
   margin: 1em 0em 1em 0em;
   color: #555361;
-  background-color: #f3fc73;
   border-color: #555361;
   border-radius: 5px;
-  font-family: 'Supermercado One';
   transition: 0.5s;
 }
-
 .order-button:hover {
-cursor: pointer;
-box-shadow: 3px 10px #888888;
+  cursor: pointer;
+  box-shadow: 3px 10px #888888;
+  background-color: #fe9dc8;
+  color: black;
 }
 
-.added-to-cart {
-  color: green;
-  padding: .5em;
-  display: none;
-  font-size: 20px;
-}
+  // background-color: #dcd3d8;
+  // background-color: #f4eadd;
+  // background-color: #aac7b9;

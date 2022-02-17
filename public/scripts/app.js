@@ -2,9 +2,10 @@
 
 $(document).ready( function() {
 
-  // $(".cart-icon").click(()=>{
-  //   window.location.href='/api/cart';
-  // })
+  // handle nav title go back to /api/dishes
+  $(".title-container").click(()=>{
+    window.location.href='/api/dishes';
+  })
 
   // handle order button click
   $(".order-button").click(e => {

@@ -24,9 +24,15 @@ body {
   justify-content: center;
   margin: 0.6em 0.3em 0.6em 0.6em;
   border-radius: 20px;
-  cursor: pointer;
   background-color: #aac7b9;
 }
+.title-container:hover {
+  cursor: pointer;
+  background-color: #555361;
+  color:#dcd3d8
+
+}
+
 .title {
   font-size: 6em;
 }
@@ -66,8 +72,3 @@ body {
 .footer-actions .fas:hover {
   color: gold;
 }
-// color: #dcd3d8;
-//   color: #f4eadd;
-//   color: #aac7b9;
-//   color: #fe9dc8;
-//   color: #c7dc98;
