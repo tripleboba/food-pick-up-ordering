@@ -10,9 +10,15 @@ $(document).ready( function() {
   // handle order button click
   $(".each-dish-footer .order-button").click(e => {
     const id = $(e.target).attr('value');
+
+    // handle counter for items in cart
+    let count = $('.counter').val();
+    const num = parseInt(count, 10) + 1;
+    $('.counter').text(num.toString());
+
     e.preventDefault();
 
-    // handle display added noti
+    // handle display added noti on top of order button
     let itemAddedNoti = $(`[data-dish=${id}]`);
     itemAddedNoti.addClass("item-added-noti").text('Item Added!').show();
     setTimeout(function() {

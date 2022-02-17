@@ -35,9 +35,13 @@
     </div>
   </div>
 
-  <i class="cart-icon">
-    <i class="fa-solid fa-basket-shopping"></i>
-  </i>
+  <div class="cart-icon">
+    <!-- <div class="num-countainer"> -->
+      <i class="fa-solid fa-basket-shopping"></i>
+      <output name="counter" class="counter" for="cart-count">0</output>
+      <!-- </div> -->
+  </div>
+
   <!-- Menu -->
   <section class="all-dishes">
     <% for (let dish of dishes) { %>
