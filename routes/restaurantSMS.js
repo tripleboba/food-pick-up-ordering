@@ -30,8 +30,7 @@ module.exports = (db) => {
         client.messages.create({
             body: `An order of ${itemString} has been made by ${data.rows[0].name}. Expected to be ready in ${duration} minutes!`,
             from: "+19377125923",
-            // to: `+1${data.rows[0].phone}`,
-            to: "+16047047055"
+            to: `+1${data.rows[0].phone}`,
           })
       })
       .catch((e) => {
