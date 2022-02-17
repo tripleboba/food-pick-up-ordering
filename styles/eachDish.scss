@@ -38,12 +38,15 @@ footer {
   margin: 0em;
 }
 .dish-description {
-  font-size: 1.5em;
-  margin: 0em;
+  // font-size: 1em;
+  margin: 1em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: 200;
 }
 .dish-price {
-  font-size: 1.3em;
-  margin-top: 1em 0em 0em 0em;
+  margin: 1em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: 200;
 }
 
 .order-button {
@@ -61,3 +64,13 @@ footer {
   background-color: #fe9dc8;
   color: black;
 }
+.item-added-noti {
+  font-size: 1em;
+  color: #adade3;
+  padding: 0.4em;
+  margin-bottom: -1.5em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
+}
+
+

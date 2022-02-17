@@ -8,9 +8,17 @@ $(document).ready( function() {
   })
 
   // handle order button click
-  $(".order-button").click(e => {
-    e.preventDefault();
+  $(".each-dish-footer .order-button").click(e => {
     const id = $(e.target).attr('value');
+    e.preventDefault();
+
+    // handle display added noti
+    let itemAddedNoti = $(`[data-dish=${id}]`);
+    itemAddedNoti.addClass("item-added-noti").text('Item Added!').show();
+    setTimeout(function() {
+      itemAddedNoti.hide();
+    },1*1000);
+
     console.log('[from scripts/app] order-btt-id: ', id);
     $.ajax({
       url: "/api/dishes",

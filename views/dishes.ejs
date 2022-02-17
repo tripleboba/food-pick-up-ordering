@@ -37,7 +37,6 @@
 
   <i class="cart-icon">
     <i class="fa-solid fa-basket-shopping"></i>
-    <!-- <i class="fas fa-shopping-cart"></i> -->
   </i>
   <!-- Menu -->
   <section class="all-dishes">
@@ -51,9 +50,9 @@
         <p class="dish-title"><%=dish.title %></p>
         <p class="dish-description"><%=dish.description%></p>
         <p class="dish-price"><%=`$${dish.cost}`%></p>
+        <div class="added-noti" data-dish="<%=dish.id%>"></div>
         <button class="order-button" type="button" value="<%=dish.id%>">order</button>
       </footer>
-      <!-- <article class="added-to-cart">Item added to cart!</article> -->
     </section>
     <% } %>
   </section>
