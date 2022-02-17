@@ -6,7 +6,9 @@ body {
   font-family: 'Supermercado One';
   display: flex;
   flex-direction: column;
-  background-color: #ece3d9;
+  // background-color: #ece3d9;
+  background-color: #fcfcf6;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 .top-banner {
@@ -14,25 +16,24 @@ body {
   width: 100%;
   height: auto;
   color: #555361;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .title-container {
   width: 80%;
   height: 10em;
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0.6em 0.3em 0.6em 0.6em;
-  border-radius: 20px;
-  background-color: #aac7b9;
+  align-items: center;
+  justify-content: space-around;
 }
 .title-container:hover {
   cursor: pointer;
   background-color: #555361;
-  color:#dcd3d8
-
+  color:#fe9dc8;
+  border-radius: 20px;
 }
-
 .title {
   font-size: 6em;
 }
@@ -47,7 +48,7 @@ body {
   margin: 0.6em 0.6em 0.6em 0.3em;
   font-size: 1em;
   // background-color: #f3fc73;
-  background-color: #aac7b9;
+  // background-color: #aac7b9;
 }
 
 .cart-icon {
