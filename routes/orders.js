@@ -1,9 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-
 module.exports = (db) => {
-
   router.get("/", (req, res) => {
 
     let query = `SELECT dishes.title, dishes.cost, dishes.duration,
@@ -25,10 +23,7 @@ module.exports = (db) => {
       });
     });
 
-
 router.post("/", (req, res) => {
-
-  //console.log('REQUEST', req);
 
   let select = `SELECT user_id, dish_id
   FROM cart_items
@@ -76,7 +71,6 @@ router.post("/", (req, res) => {
     // JOIN users ON users.id = cart_items.user_id
     // JOIN restaurant ON dishes.restaurant_id = restaurant.id
     // WHERE cart_items.placed = TRUE;
-
 
   // db.query(query)
   // .then(data => {

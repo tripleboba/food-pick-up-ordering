@@ -1,7 +1,7 @@
 .all-dishes {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .each-dish {
@@ -12,8 +12,7 @@
   color: #555361;
   height: auto;
   width: 25%;
-  margin: 1em 3em 3em 3em;
-  font-family: 'Supermercado One';
+  margin: 1em;
   border-radius: 20px;
   // box-shadow: 5px 10px #888888;
 }
@@ -39,45 +38,38 @@ footer {
   margin: 0em;
 }
 .dish-description {
-  font-size: 1.5em;
-  margin: 0em;
+  // font-size: 1em;
+  margin: 1em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: 200;
 }
+.dish-price {
+  margin: 1em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: 200;
+}
+
 .order-button {
   font-size: 1.5em;
   padding: 0.25em 0.5em;
   margin: 1em 0em 1em 0em;
   color: #555361;
-  background-color: #f3fc73;
   border-color: #555361;
   border-radius: 5px;
-  font-family: 'Supermercado One';
   transition: 0.5s;
 }
-
 .order-button:hover {
-cursor: pointer;
-box-shadow: 3px 10px #888888;
+  cursor: pointer;
+  box-shadow: 3px 10px #888888;
+  background-color: #fe9dc8;
+  color: black;
+}
+.item-added-noti {
+  font-size: 1em;
+  color: #adade3;
+  padding: 0.4em;
+  margin-bottom: -1.5em;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  font-weight: bold;
 }
 
-.added-to-cart {
-  color: green;
-  padding: .5em;
-  display: none;
-  font-size: 20px;
-}
-
-.cart-icon {
-  position: relative;
-}
-
-.num-countainer {
-  position: relative;
-}
-
-.counter {
-  position: absolute;
-  color: red;
-  top: 8px;
-  left: 40px;
-  font-size: 40px;
-}

@@ -27,22 +27,24 @@
 </head>
 
 <body>
-  <section class="top-banner">
+  <div class="top-banner">
     <div class="title-container">
       <h2 class="title">Big Mouth Boba</h2>
     </div>
-    <section class="contact">
+    <div class="contact">
         <div>1234567890</div>
         <div>bigmouth@gmail.com</div>
         <div>12 State Street Newburyport</div>
-    </section>
-  </section>
+    </div>
+  </div>
 
   <div class="cart-icon">
-    <div class="num-countainer">
-    <i class="fas fa-shopping-cart"></i>
-    <output name="counter" class="counter" for="cart-count">0</output></div>
+    <!-- <div class="num-countainer"> -->
+      <i class="fa-solid fa-basket-shopping"></i>
+      <output name="counter" class="counter" for="cart-count">0</output>
+      <!-- </div> -->
   </div>
+
   <!-- Menu -->
   <section class="all-dishes">
     <% for (let dish of dishes) { %>
@@ -55,9 +57,9 @@
         <p class="dish-title"><%=dish.title %></p>
         <p class="dish-description"><%=dish.description%></p>
         <p class="dish-price"><%=`$${dish.cost}`%></p>
+        <div class="added-noti" data-dish="<%=dish.id%>"></div>
         <button class="order-button" type="button" value="<%=dish.id%>">order</button>
       </footer>
-      <article class="added-to-cart">Item added to cart!</article>
     </section>
     <% } %>
   </section>

@@ -8,8 +8,8 @@ const client = require("twilio")(accountSid, authToken);
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    //let name = "";
-    let query = `SELECT SUM(dishes.duration), users.name, users.phone
+    let query = `
+    SELECT SUM(dishes.duration), users.name, users.phone
     FROM cart_items
     JOIN dishes ON dish_id = dishes.id
     JOIN users ON user_id = users.id
@@ -17,9 +17,7 @@ module.exports = (db) => {
 
    db.query(query)
       .then((data) => {
-        //console.log("data: ", data);
-        console.log("message send");
-
+        console.log("customer sms send");
         client.messages.create({
           body: `Hi ${data.rows[0].name}. Your order has been received! Your order will be ready in ${data.rows[0].sum} minutes!`,
           from: "+19377125923",
@@ -31,8 +29,8 @@ module.exports = (db) => {
             from: "+19377125923",
             to: `+1${data.rows[0].phone}`,
           })
-        }, 30 * 1000) // set fixed 30 seconds
-        //..then(
+        }, 20 * 1000) // set fixed 30 seconds
+
         setTimeout(function() {
           let clearCart = `DELETE FROM cart_items
           WHERE user_id = 1`;
@@ -40,8 +38,9 @@ module.exports = (db) => {
             .then(data => {
               console.log('items deleted', data)
             })
-        }, 5000)
-      }); // db query
+        }, 5 * 1000)
+
+      }) // db query
   }); // router.post
   return router;
 }; // most out

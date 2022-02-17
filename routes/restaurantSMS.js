@@ -7,15 +7,13 @@ const client = require("twilio")(accountSid, authToken);
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    db.query(
-      `SELECT dishes.title, users.name, restaurant.phone, dishes.duration
+    let query = `SELECT dishes.title, users.name, restaurant.phone, dishes.duration
     FROM cart_items
     JOIN dishes ON dish_id = dishes.id
     JOIN users ON user_id = users.id
-    JOIN restaurant on restaurant.id = dishes.restaurant_id`
-      //GROUP BY users.name, restaurant.phone, dishes.title
-    )
+    JOIN restaurant on restaurant.id = dishes.restaurant_id`;
 
+    db.query(query)
       .then((data) => {
         console.log("restaurant data: ", data);
         const itemsArr = [];
@@ -27,22 +25,16 @@ module.exports = (db) => {
         }
        // console.log('dur', duration);
         const itemString = itemsArr.join(", ");
-        console.log("string: ", itemString);
-        console.log("message send");
-        client.messages
-          .create({
+        console.log("Placed order items: ", itemString);
+        console.log("restaurant sms send");
+        client.messages.create({
             body: `An order of ${itemString} has been made by ${data.rows[0].name}. Expected to be ready in ${duration} minutes!`,
             from: "+19377125923",
             to: `+1${data.rows[0].phone}`,
           })
-          .then((message) => console.log(message.sid));
       })
-      // let clearCart = `DELETE FROM cart_items
-      // WHERE user_id = 1`;
-      // db.query(clearCart)
-
       .catch((e) => {
-        console.error("Got an error:", e.code, e.message);
+        console.error("Error in restaurant sms:", e.code, e.message);
       });
     res.redirect("/api/dishes");
   });
