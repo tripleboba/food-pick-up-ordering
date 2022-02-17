@@ -5,6 +5,15 @@
 
 $(document).ready( function() {
 
+  //handle click on order-button, count orders' qty in cart;
+  $(".order-button").on("click", function(event) {
+    let count = $('.counter').val();
+    const num = parseInt(count, 10) +  1;
+    $('.counter').text(num.toString());
+
+  });
+
+
   // handle click on cart-icon to go to the orders page
   $(".cart-icon").click(()=>{
     window.location.href='/api/cart';

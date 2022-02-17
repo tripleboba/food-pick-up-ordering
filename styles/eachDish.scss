@@ -65,3 +65,19 @@ box-shadow: 3px 10px #888888;
   display: none;
   font-size: 20px;
 }
+
+.cart-icon {
+  position: relative;
+}
+
+.num-countainer {
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  color: red;
+  top: 8px;
+  left: 40px;
+  font-size: 40px;
+}
