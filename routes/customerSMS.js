@@ -40,7 +40,7 @@ module.exports = (db) => {
             .then(data => {
               console.log('items deleted', data)
             })
-        }, 60 * 1000)
+        }, 5000)
       }); // db query
   }); // router.post
   return router;
