@@ -21,6 +21,7 @@
   font-weight: bold;
 
 }
+
 .order-header {
   display: flex;
   flex-direction: column;
@@ -30,9 +31,11 @@
   border-radius: 20px;
   margin: 3em 0 1em 0;
 }
+
 .order-title {
   font-size: 2em;
 }
+
 .order-body {
   display: flex;
   flex-direction: column;
@@ -62,3 +65,5 @@ justify-content: center;
 cursor: pointer;
 box-shadow: 3px 10px #888888;
 }
+
+
