@@ -28,8 +28,9 @@ module.exports = (db) => {
         console.log("Placed order items: ", itemString);
         console.log("restaurant sms send");
         client.messages.create({
-            body: `An order of ${itemString} has been made by ${data.rows[0].name}. Expected to be ready in ${duration} minutes!`,
-            from: "+19377125923",
+            body: `--Msg restaurant will receive when customer orders something--
+            An order of ${itemString} has been made by ${data.rows[0].name}. Expected to be ready in ${duration} minutes!`,
+            from: "+19894652664",
             to: `+1${data.rows[0].phone}`,
           })
       })

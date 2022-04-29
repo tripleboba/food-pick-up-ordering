@@ -19,17 +19,19 @@ module.exports = (db) => {
       .then((data) => {
         console.log("customer sms send");
         client.messages.create({
-          body: `Hi ${data.rows[0].name}. Your order has been received! Your order will be ready in ${data.rows[0].sum} minutes!`,
-          from: "+19377125923",
+          body: `--Confirmation customer will receive when order is placed--
+          Hi ${data.rows[0].name}. Your order has been received! Your order will be ready in ${data.rows[0].sum} minutes!`,
+          from: "+19894652664",
           to: `+1${data.rows[0].phone}`,
         })
         setTimeout(function() {
           client.messages.create({
-            body: 'Your order is completed! You can pick it up now!',
-            from: "+19377125923",
+            body: `--Pickup msg customer will receive--
+            Your order is completed! You can pick it up now!`,
+            from: "+19894652664",
             to: `+1${data.rows[0].phone}`,
           })
-        }, 20 * 1000) // set fixed 30 seconds
+        }, 10 * 1000) // set fixed 10 seconds
 
         setTimeout(function() {
           let clearCart = `DELETE FROM cart_items
