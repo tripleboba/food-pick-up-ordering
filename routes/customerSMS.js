@@ -31,7 +31,7 @@ module.exports = (db) => {
             from: "+19894652664",
             to: `+1${data.rows[0].phone}`,
           })
-        }, 10 * 1000) // set fixed 10 seconds
+        }, 10 * 1000) // set fixed 10 seconds for pickup msg to customer
 
         setTimeout(function() {
           let clearCart = `DELETE FROM cart_items
@@ -40,7 +40,7 @@ module.exports = (db) => {
             .then(data => {
               console.log('items deleted', data)
             })
-        }, 5 * 1000)
+        }, 5 * 1000)  // set clean out cartDB in 5 seconds
 
       }) // db query
   }); // router.post
